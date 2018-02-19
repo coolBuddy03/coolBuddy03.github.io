@@ -98,7 +98,7 @@
                 branch: "=",
                 category: "="
             },
-            templateUrl: '/components/shared/templates/BreadCrumTemplate.html',
+            templateUrl: 'app/components/shared/templates/BreadCrumTemplate.html',
             link: function(scope, element, attrs) {}
         }
     };
