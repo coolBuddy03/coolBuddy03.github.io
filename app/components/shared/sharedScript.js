@@ -14,7 +14,7 @@
         var getCatalogData = function() {
             var q = $q.defer();
             if (!allData) {
-                $http.get('/data/catalog.json').then(function(response) {
+                $http.get('app/data/catalog.json').then(function(response) {
                     console.log(response);
                     console.log("all Locations Fetched");
                     allData = response.data;
