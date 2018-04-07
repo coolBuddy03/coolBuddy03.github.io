@@ -29,10 +29,10 @@
     </div>
     <div layout="row" class="margin-top-10">
         <div flex="100" ng-if="!isreturn">
-            <md-button class="md-raised md-primary bg-orange" ng-click="someCtrlFn({arg1:1})">Search</md-button>
+            <md-button class="md-raised md-primary bg-orange" ng-click="someCtrlFn({arg1:1})" ng-disabled="!(search.origin_city&&search.destination_city&&search.no_passengers&&search.departure_date)">Search</md-button>
         </div>
         <div flex="100" ng-if="isreturn">
-            <md-button class="md-raised md-primary bg-orange" ng-click="someCtrlFn({arg1:2})">Search</md-button>
+            <md-button class="md-raised md-primary bg-orange" ng-disabled="!(search.origin_city&&search.destination_city&&search.no_passengers&&search.departure_date&&search.return_date)" ng-click="someCtrlFn({arg1:2})">Search</md-button>
         </div>
     </div>
 </div>
