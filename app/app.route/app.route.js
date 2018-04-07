@@ -5,9 +5,9 @@ $locationProvider.hashPrefix('!');
 // routes
 $routeProvider
 	.when("/",{
-		templateUrl:"/components/home/HomeView.html",
+		templateUrl:"/app/components/home/HomeView.html",
 		controller:"HomeCtrl"
 	})
 	
-	.otherwise({templateUrl:"/components/home/HomeView.html",controller:"HomeCtrl"});
+	.otherwise({templateUrl:"/app/components/home/HomeView.html",controller:"HomeCtrl"});
 }]);
