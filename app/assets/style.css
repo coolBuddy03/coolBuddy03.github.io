@@ -1,71 +1,265 @@
 /* Header Css Starts */
 
-.rental-management-header md-toolbar {
+.flight-management-header md-toolbar {
     background-color: #f68e09 !important;
 }
 
-.border-bottom-1px{
-	border-bottom:1px solid #f1f1f1;
+.border-bottom-1px {
+    border-bottom: 1px solid #f1f1f1;
 }
-.padding-all-0{
-	padding: 0px !important;
+
+.border-right-1px-grey {
+    border-right: 1px solid #999;
 }
-.margin-all-0{
-	margin:0px !important;
+
+.padding-all-0 {
+    padding: 0px !important;
 }
-.text-align-left{
-	text-align: left !important;
+
+.padding-all-5px {
+    padding: 5px !important;
 }
+
+.padding-all-10px {
+    padding: 10px !important;
+}
+
+
+.margin-all-0 {
+    margin: 0px !important;
+}
+
+.margin-all-10 {
+    margin: 10px !important;
+}
+
+.text-align-left {
+    text-align: left !important;
+}
+
+
 /* Header Css Ends */
 
+
 /* Category List Css Starts */
-.margin-top-20{
-	margin-top: 20px ;
+
+.margin-top-10 {
+    margin-top: 10px;
 }
-.margin-top-30{
-	margin-top: 30px;
+
+.margin-top-20 {
+    margin-top: 20px;
 }
-.text-decoration-none{
-	text-decoration: none;
+
+.margin-top-30 {
+    margin-top: 30px;
 }
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+
 /* Category List Css Ends */
+
+
 /* BreadCrumbs Css Starts */
-.padding-left-5{
-	padding-left: 5px;
+
+.padding-left-5 {
+    padding-left: 5px;
 }
-.padding-left-10{
-	padding-left:10px
+
+.padding-left-10 {
+    padding-left: 10px
 }
-.margin-bottom-20{
-	margin-bottom: 20px;
+
+.padding-bottom-20px {
+    padding-bottom: 20px;
 }
-.text-blue{
-	color: blue;
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
 }
-.cursor-pointer{
-	cursor: pointer;
+
+.text-blue {
+    color: blue;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
 /* BreadCrumbs Css Ends */
+
+
 /* Home Screen Css Starts */
-.text-center{
-	text-align: center;
+
+.text-center {
+    text-align: center;
 }
-.margin-top-50{
-	margin-top: 50px;
+
+.right-align {
+    text-align: right;
 }
-.margin-bottom-0{
-	margin-bottom: 0px;
+
+.margin-top-50 {
+    margin-top: 50px;
 }
-.margin-top-5{
-	margin-top:5px;
+
+.margin-bottom-0 {
+    margin-bottom: 0px;
 }
-.font-size-17{
-	font-size: 17px;
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
 }
-.font-size-21{
-	font-size: 21px;
+
+.margin-top-5 {
+    margin-top: 5px;
 }
-.font-weight-600{
-	font-weight:600;
+
+.margin-top-17 {
+    margin-top: 17px;
 }
+
+.font-size-10 {
+    font-size: 10px;
+}
+
+.font-size-12 {
+    font-size: 12px;
+}
+
+.font-size-17 {
+    font-size: 17px;
+}
+
+.font-size-21 {
+    font-size: 21px;
+}
+
+.font-size-25 {
+    font-size: 25px;
+}
+
+.font-size-26 {
+    font-size: 26px;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+.bg-orange {
+    background-color: #f68e09 !important;
+}
+
+
 /*Home Screen Css Ends*/
+
+
+/* Height Css Starts*/
+
+.height-100vh {
+    height: 100vh;
+}
+
+
+/* Height Css Ends*/
+
+.departure-date-picker .md-button.md-icon-button {
+    width: initial;
+    /*margin:0px;
+	padding:0px;*/
+}
+
+.return-date-picker .md-button.md-icon-button {
+    width: initial;
+    /*margin:0px;
+	padding:0px;*/
+}
+
+.border-bottom-1px-orange {
+    border-bottom: 1px solid #f68e09;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+
+.custom-slider.rzslider .rz-bar {
+    background: #ffe4d1;
+    height: 2px;
+}
+
+.custom-slider.rzslider .rz-selection {
+    background: orange;
+}
+
+.custom-slider.rzslider .rz-pointer {
+    width: 8px;
+    height: 16px;
+    top: auto;
+    /* to remove the default positioning */
+    bottom: 0;
+    background-color: #333;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.custom-slider.rzslider .rz-pointer:after {
+    display: none;
+}
+
+.custom-slider.rzslider .rz-bubble {
+    bottom: 14px;
+}
+
+.custom-slider.rzslider .rz-limit {
+    font-weight: bold;
+    color: orange;
+}
+
+.custom-slider.rzslider .rz-tick {
+    width: 1px;
+    height: 10px;
+    margin-left: 4px;
+    border-radius: 0;
+    background: #ffe4d1;
+    top: -1px;
+}
+
+.custom-slider.rzslider .rz-tick.rz-selected {
+    background: orange;
+}
+
+.bg-gray {
+    background-color: #f1f1f1;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.book-flight-container {
+    border: 1px solid #f1f1f1;
+    height: 100px;
+}
+
+.margin-left-0px{
+	margin-left:0px;
+}
+
+.line-height-31{
+	line-height: 31px;
+}
+
+.width-100per{
+    width: 100%;
+}

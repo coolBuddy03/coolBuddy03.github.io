@@ -1,2 +1,2 @@
 'use strict';
-var rentalManagementApp = angular.module('RentalManagementApp',['ngRoute','ngSanitize','ngMaterial','ngAnimate']);
+var flightManagementApp = angular.module('flightManagementApp',['ngRoute','ngSanitize','ngMaterial','ngAnimate','rzModule']);

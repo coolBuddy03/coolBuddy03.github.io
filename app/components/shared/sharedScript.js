@@ -14,9 +14,8 @@
         var getCatalogData = function() {
             var q = $q.defer();
             if (!allData) {
-                $http.get('app/data/catalog.json').then(function(response) {
-                    console.log(response);
-                    console.log("all Locations Fetched");
+                $http.get('/data/catalog.json').then(function(response) {
+                    
                     allData = response.data;
                     var temp = [];
                     angular.copy(allData, temp);
@@ -50,8 +49,8 @@
         return ret;
     }
 
-    rentalManagementApp.factory('utils', ['$http', '$q', utilsService]);
-    rentalManagementApp.factory('showToast', ['$mdToast', showToast]);
+    flightManagementApp.factory('utils', ['$http', '$q', utilsService]);
+    flightManagementApp.factory('showToast', ['$mdToast', showToast]);
 
 }());
 
@@ -65,42 +64,31 @@
  * Common Controllers
  *
  */
-(function() {
-    var breadcrumbCtrl = function($scope, $location, $routeParams) {
-        console.log($routeParams);
-
-        $scope.locationClicked = function() {
-            $location.path('/category');
-            $location.search({ loc: $routeParams.loc });
-        }
-
-        $scope.branchClicked = function() {
-            $location.path('/category');
-            $location.search({ loc: $routeParams.loc, bran: $routeParams.bran });
-        }
-
-    }
-    rentalManagementApp.controller('BreadCrumbCtrl', ['$scope', '$location', '$routeParams', breadcrumbCtrl]);
-}());
 /**
  *
  * Common Directives
  *
  */
 (function() {
-    var breadCrumbsDirective = function() {
+    
+    var flightFormDirective = function() {
         return {
             restrict: 'EA',
             replace: true,
-            controller: 'BreadCrumbCtrl',
             scope: {
-                location: "=",
-                branch: "=",
-                category: "="
+                isreturn: '=',
+                search:'=',
+                someCtrlFn: '&callbackFn', 
             },
-            templateUrl: 'app/components/shared/templates/BreadCrumTemplate.html',
-            link: function(scope, element, attrs) {}
+            templateUrl: '/components/shared/templates/flightFormTemplate.html',
+            link: function(scope, element, attrs) {
+                scope.passengerNumber = [];
+                for (var i = 0; i < 40; i++) {
+                    scope.passengerNumber.push(i + 1);
+                }
+            }
         }
     };
-    rentalManagementApp.directive('breadCrumbs', [breadCrumbsDirective]);
+    flightManagementApp.directive('flightForm', [flightFormDirective]);
+
 }());

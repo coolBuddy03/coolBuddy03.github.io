@@ -1,0 +1,38 @@
+<div class="border-bottom-1px-orange padding-bottom-20px">
+    <div layout="row">
+        <md-input-container flex="100">
+            <label>Enter origin city</label>
+            <input ng-model="search.origin_city">
+        </md-input-container>
+    </div>
+    <div layout="row">
+        <md-input-container flex="100">
+            <label>Enter destination city</label>
+            <input ng-model="search.destination_city">
+        </md-input-container>
+    </div>
+    <div layout="row">
+        <md-input-container class="md-block" flex="100">
+            <label>Number Of Passengers</label>
+            <md-select ng-model="search.no_passengers">
+                <md-option ng-repeat="pNo in passengerNumber" value="{{pNo}}">
+                    {{pNo}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div layout="row">
+        <md-datepicker ng-model="search.departure_date" md-placeholder="Departure date" class="departure-date-picker"></md-datepicker>
+    </div>
+    <div layout="row" ng-if="isreturn">
+        <md-datepicker ng-model="search.return_date" md-placeholder="Return date" class="return-date-picker"></md-datepicker>
+    </div>
+    <div layout="row" class="margin-top-10">
+        <div flex="100" ng-if="!isreturn">
+            <md-button class="md-raised md-primary bg-orange" ng-click="someCtrlFn({arg1:1})">Search</md-button>
+        </div>
+        <div flex="100" ng-if="isreturn">
+            <md-button class="md-raised md-primary bg-orange" ng-click="someCtrlFn({arg1:2})">Search</md-button>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,107 @@
-<rental-header></rental-header>
+<flight-header></flight-header>
 <md-content>
-    <div layout="row" class="margin-top-30">
-        <div flex="80" flex-offset="10" class="text-center margin-top-50">
-        <p class="margin-bottom-0 font-size-21 font-weight-600">Welcome To</p>
-        <p class="margin-top-5 font-size-21 font-weight-600">Rental Management System</p>
-        <p class="font-size-17">Please Select Location</p>
+    <div layout="row" layout-xs="column">
+        <div flex="30" flex-xs="100" class="border-right-1px-grey height-100vh">
+            <md-tabs md-dynamic-height>
+                <md-tab label="One Way" class="height-100vh" ng-click="init()">
+                    <md-content class="margin-top-5 padding-all-5px">
+                        <!-- Form Directive Starts -->
+                        <flight-form isreturn="false" search="search" callback-fn="searchFlight(arg1)"></flight-form>
+                        <!-- Form Directive Ends -->
+                        <div ng-if="flighSearchData.length>0">
+                            <p class="bold font-size-17">Refine Flight Search</p>
+                            <div layout class="margin-top-17">
+                                <rzslider rz-slider-model="slider.minValue" rz-slider-high="slider.maxValue" rz-slider-options="slider.options"></rzslider>
+                            </div>
+                        </div>
+                    </md-content>
+                </md-tab>
+                <md-tab label="Return" ng-click="init()">
+                    <md-content class="md-padding">
+                        <!-- Form Directive Starts -->
+                        <flight-form isreturn="true" search="search" callback-fn="searchFlight(arg1)"></flight-form>
+                        <!-- Form Directive Ends -->
+                        <div ng-if="flighSearchData.length>0">
+                            <p class="bold font-size-17">Refine Flight Search</p>
+                            <div layout class="margin-top-17">
+                                <rzslider rz-slider-model="slider.minValue" rz-slider-high="slider.maxValue" rz-slider-options="slider.options"></rzslider>
+                            </div>
+                        </div>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </div>
+        <div flex="70" flex-xs="100" class="bg-gray">
+            <div ng-if="isSearchExists && flighSearchData.length>0">
+                <div class="search-header">
+                    <div layout="row" layout-xs="column" class="bg-white padding-all-5px margin-bottom-10">
+                        <div flex="80" flex-xs="100">
+                            <ul>
+                                <li class="display-inline-block font-size-26 font-weight-600">{{search.origin_city}}</li>
+                                <li class="display-inline-block font-size-26"> > </li>
+                                <li class="display-inline-block font-size-26 font-weight-600"> {{search.destination_city}} </li>
+                                <li class="display-inline-block font-size-26" ng-if="isReturn"> > </li>
+                                <li class="display-inline-block font-size-26 font-weight-600" ng-if="isReturn">{{search.origin_city}}</li>
+                            </ul>
+                        </div>
+                        <div flex="20" flex-xs="100">
+                            <p class="line-height-31 margin-bottom-0"><span class="font-weight-600">Depart:</span> {{search.departure_date|date:'dd/MM/yyyy'}}</p>
+                            <p ng-if="isReturn"><span class="font-weight-600">Return:</span> {{search.return_date|date:'dd/MM/yyyy'}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div ng-repeat="flightData in flighSearchData" class="margin-all-10 padding-all-10px bg-white" ng-if="!flightData.isRefinePrice && flighSearchData.length>0">
+                    <div layout="row">
+                        <div flex="100">
+                            <div>
+                                <p class="font-size-26">Rs {{flightData.per_ticket_price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div layout="row">
+                        <div flex="40" flex-xs="50">
+                            <p class="font-size-10 margin-bottom-0">{{flightData.origin_data.flight_code}}
+                            </p>
+                            <p class="margin-bottom-0 font-weight-600">{{flightData.origin_data.from_city_code}} > {{flightData.origin_data.to_city_code}}
+                            </p>
+                            <p class="margin-bottom-0 font-weight-600">
+                                Depart: {{flightData.origin_data.depart_time}}
+                            </p>
+                            <p class="margin-bottom-0 font-weight-600">
+                                Arrival: {{flightData.origin_data.arrival_time}}
+                            </p>
+                        </div>
+                        <div flex="40" flex-xs="50">
+                            <div ng-if="isReturn">
+                                <p class="font-size-10 margin-bottom-0">{{flightData.destination_data.flight_code}}
+                                </p>
+                                <p class="margin-bottom-0 font-weight-600">{{flightData.destination_data.from_city_code}} > {{flightData.destination_data.to_city_code}}
+                                </p>
+                                <p class="margin-bottom-0 font-weight-600">
+                                    Depart: {{flightData.destination_data.depart_time}}
+                                </p>
+                                <p class="margin-bottom-0 font-weight-600">
+                                    Arrival: {{flightData.destination_data.arrival_time}}
+                                </p>
+                            </div>
+                        </div>
+                        <div flex="20" flex-xs="100">
+                            <div class="book-flight-container">
+                                
+                            </div>
+                            <div>
+                                <md-button class="md-raised md-primary font-size-12 margin-left-0px width-100per">Book this flight</md-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="margin-all-10 padding-all-10px bg-white" ng-if="flighSearchData.length===0 && isSearchExists">
+                <p class="text-center font-size-25">Sorry No Flight Available !!! </p>
+            </div>
+            <!-- <p>
+                Search Result Here
+            </p> -->
         </div>
     </div>
 </md-content>
