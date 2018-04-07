@@ -10,6 +10,7 @@
         $scope.isSearchExists = false;
         $scope.isSearchProcessing = false;
         $scope.search = {};
+        $scope.searchDups = {};
         for (var i = 0; i < 40; i++) {
             $scope.passengerNumber.push(i + 1);
         }
@@ -23,6 +24,7 @@
             // $scope.isSearchProcessing = true;
             switch (type) {
                 case 1:
+                    $scope.searchDups = angular.copy($scope.search);
                     $scope.flighSearchData = [];
                     $scope.isReturn = false;
                     console.log("One Way Trip");
@@ -35,6 +37,7 @@
                     // $scope.isSearchProcessing = false;
                     break;
                 case 2:
+                    $scope.searchDups = angular.copy($scope.search);
                     $scope.flighSearchData = [];
                     $scope.isReturn = true;
                     console.log("Two Way Trip");

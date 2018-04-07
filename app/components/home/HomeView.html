@@ -37,16 +37,16 @@
                     <div layout="row" layout-xs="column" class="bg-white padding-all-5px margin-bottom-10">
                         <div flex="80" flex-xs="100">
                             <ul>
-                                <li class="display-inline-block font-size-26 font-weight-600">{{search.origin_city}}</li>
+                                <li class="display-inline-block font-size-26 font-weight-600">{{searchDups.origin_city}}</li>
                                 <li class="display-inline-block font-size-26"> > </li>
-                                <li class="display-inline-block font-size-26 font-weight-600"> {{search.destination_city}} </li>
+                                <li class="display-inline-block font-size-26 font-weight-600"> {{searchDups.destination_city}} </li>
                                 <li class="display-inline-block font-size-26" ng-if="isReturn"> > </li>
-                                <li class="display-inline-block font-size-26 font-weight-600" ng-if="isReturn">{{search.origin_city}}</li>
+                                <li class="display-inline-block font-size-26 font-weight-600" ng-if="isReturn">{{searchDups.origin_city}}</li>
                             </ul>
                         </div>
                         <div flex="20" flex-xs="100">
-                            <p class="line-height-31 margin-bottom-0"><span class="font-weight-600">Depart:</span> {{search.departure_date|date:'dd/MM/yyyy'}}</p>
-                            <p ng-if="isReturn"><span class="font-weight-600">Return:</span> {{search.return_date|date:'dd/MM/yyyy'}}</p>
+                            <p class="line-height-31 margin-bottom-0"><span class="font-weight-600">Depart:</span> {{searchDups.departure_date|date:'dd/MM/yyyy'}}</p>
+                            <p ng-if="isReturn"><span class="font-weight-600">Return:</span> {{searchDups.return_date|date:'dd/MM/yyyy'}}</p>
                         </div>
                     </div>
                 </div>
