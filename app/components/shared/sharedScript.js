@@ -14,7 +14,7 @@
         var getCatalogData = function() {
             var q = $q.defer();
             if (!allData) {
-                $http.get('/data/catalog.json').then(function(response) {
+                $http.get('/app/data/catalog.json').then(function(response) {
                     
                     allData = response.data;
                     var temp = [];
@@ -80,7 +80,7 @@
                 search:'=',
                 someCtrlFn: '&callbackFn', 
             },
-            templateUrl: '/components/shared/templates/flightFormTemplate.html',
+            templateUrl: '/app/components/shared/templates/flightFormTemplate.html',
             link: function(scope, element, attrs) {
                 scope.passengerNumber = [];
                 for (var i = 0; i < 40; i++) {

@@ -13,7 +13,7 @@
             scope: {},
             replace: true,
             controller: 'HeaderCtrl',
-            templateUrl: 'components/header/headerTemplate.html',
+            templateUrl: '/app/components/header/headerTemplate.html',
             link: function(scope, element, attrs) {}
         }
     };
